@@ -2,7 +2,7 @@
 //  SmartTourismTaiwanDataProviderTests.swift
 //  SmartTourismTaiwanDataProviderTests
 //
-//  Created by kelly on 12/21/15.
+//  Created by Hsuan-Chih Chuang on 12/21/15.
 //  Copyright © 2015 Chiegaia. All rights reserved.
 //
 

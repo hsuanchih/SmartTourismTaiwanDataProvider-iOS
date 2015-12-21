@@ -1,0 +1,186 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "DataParser"
+provides-nominal:
+- "C30SmartTourismTaiwanDataProvider10DataParser"
+provides-member:
+- ["C30SmartTourismTaiwanDataProvider10DataParser", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "County"
+- !private "Tour"
+- "AnyObject"
+- "DataParser"
+- !private "Activity"
+- !private "NSObject"
+- !private "Attraction"
+- !private "FoodAndDrink"
+- !private "Theme"
+- !private "Array"
+depends-member:
+- !private ["PSo25AbstractJSONModelProtocol", "arrayOfModelsFromDictionaries"]
+- !private ["PSo25AbstractJSONModelProtocol", "init"]
+- !private ["CSo8Activity", "arrayOfModelsFromDictionaries"]
+- !private ["CSo8Activity", "deinit"]
+- !private ["CSo8Activity", "init"]
+- !private ["PSs9AnyObject", "Activity"]
+- !private ["PSs9AnyObject", "Attraction"]
+- !private ["PSs9AnyObject", "County"]
+- !private ["PSs9AnyObject", "FoodAndDrink"]
+- !private ["PSs9AnyObject", "Theme"]
+- !private ["PSs9AnyObject", "Tour"]
+- !private ["PSs9AnyObject", "arrayOfModelsFromDictionaries"]
+- !private ["PSs9AnyObject", "init"]
+- ["PSs9AnyObject", ""]
+- !private ["CSo10Attraction", "arrayOfModelsFromDictionaries"]
+- !private ["CSo10Attraction", "deinit"]
+- !private ["CSo10Attraction", "init"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- !private ["PSs25BooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs11BooleanType", "_getBuiltinLogicValue"]
+- !private ["PSs11CVarArgType", "arrayOfModelsFromDictionaries"]
+- !private ["PSs11CVarArgType", "init"]
+- !private ["CSo6County", "arrayOfModelsFromDictionaries"]
+- !private ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs23CustomStringConvertible", "arrayOfModelsFromDictionaries"]
+- !private ["PSs23CustomStringConvertible", "init"]
+- !private ["C30SmartTourismTaiwanDataProvider10DataParser", "Activity"]
+- ["C30SmartTourismTaiwanDataProvider10DataParser", "AnyObject"]
+- !private ["C30SmartTourismTaiwanDataProvider10DataParser", "Array"]
+- !private ["C30SmartTourismTaiwanDataProvider10DataParser", "Attraction"]
+- !private ["C30SmartTourismTaiwanDataProvider10DataParser", "County"]
+- !private ["C30SmartTourismTaiwanDataProvider10DataParser", "FoodAndDrink"]
+- !private ["C30SmartTourismTaiwanDataProvider10DataParser", "NSObject"]
+- !private ["C30SmartTourismTaiwanDataProvider10DataParser", "Theme"]
+- !private ["C30SmartTourismTaiwanDataProvider10DataParser", "Tour"]
+- ["C30SmartTourismTaiwanDataProvider10DataParser", "deinit"]
+- ["C30SmartTourismTaiwanDataProvider10DataParser", "init"]
+- ["C30SmartTourismTaiwanDataProvider10DataParser", "parseResponseObject"]
+- !private ["PSs9Equatable", "_getBuiltinLogicValue"]
+- !private ["PSs9Equatable", "arrayOfModelsFromDictionaries"]
+- !private ["PSs9Equatable", "init"]
+- !private ["CSo12FoodAndDrink", "arrayOfModelsFromDictionaries"]
+- !private ["CSo12FoodAndDrink", "deinit"]
+- !private ["CSo12FoodAndDrink", "init"]
+- !private ["PSs8Hashable", "_getBuiltinLogicValue"]
+- !private ["PSs8Hashable", "arrayOfModelsFromDictionaries"]
+- !private ["PSs8Hashable", "init"]
+- !private ["PSo6Ignore", "arrayOfModelsFromDictionaries"]
+- !private ["PSo6Ignore", "init"]
+- !private ["SQ", "deinit"]
+- !private ["PSo5Index", "arrayOfModelsFromDictionaries"]
+- !private ["PSo5Index", "init"]
+- !private ["CSo9JSONModel", "arrayOfModelsFromDictionaries"]
+- !private ["CSo9JSONModel", "init"]
+- !private ["PSo8NSCoding", "arrayOfModelsFromDictionaries"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo9NSCopying", "arrayOfModelsFromDictionaries"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["CSo14NSMutableArray", "deinit"]
+- !private ["CSo8NSObject", "arrayOfModelsFromDictionaries"]
+- !private ["CSo8NSObject", "init"]
+- !private ["PSo16NSObjectProtocol", "arrayOfModelsFromDictionaries"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo14NSSecureCoding", "arrayOfModelsFromDictionaries"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo8Optional", "arrayOfModelsFromDictionaries"]
+- !private ["PSo8Optional", "init"]
+- !private ["Sq", "deinit"]
+- !private ["CSo5Theme", "arrayOfModelsFromDictionaries"]
+- !private ["CSo5Theme", "deinit"]
+- !private ["CSo5Theme", "init"]
+- !private ["CSo4Tour", "arrayOfModelsFromDictionaries"]
+- !private ["CSo4Tour", "deinit"]
+- !private ["CSo4Tour", "init"]
+- !private ["PSs33_BuiltinBooleanLiteralConvertible", "_getBuiltinLogicValue"]
+- !private ["PSs21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["PSs12_Reflectable", "_getBuiltinLogicValue"]
+depends-nominal:
+- !private "PSo25AbstractJSONModelProtocol"
+- !private "CSo8Activity"
+- "PSs9AnyObject"
+- !private "CSo10Attraction"
+- !private "Sb"
+- !private "PSs25BooleanLiteralConvertible"
+- !private "PSs11BooleanType"
+- !private "PSs11CVarArgType"
+- !private "CSo6County"
+- !private "PSs23CustomStringConvertible"
+- "C30SmartTourismTaiwanDataProvider10DataParser"
+- !private "PSs9Equatable"
+- !private "CSo12FoodAndDrink"
+- !private "PSs8Hashable"
+- !private "PSo6Ignore"
+- !private "SQ"
+- !private "PSo5Index"
+- !private "CSo9JSONModel"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "CSo14NSMutableArray"
+- !private "CSo8NSObject"
+- !private "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "PSo8Optional"
+- !private "Sq"
+- !private "CSo5Theme"
+- !private "CSo4Tour"
+- !private "PSs33_BuiltinBooleanLiteralConvertible"
+- !private "PSs21_ObjectiveCBridgeable"
+- !private "PSs12_Reflectable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONAPI.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONModel+networking.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONHTTPClient.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONModelLib.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/NSArray+JSONModel.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONModelClassProperty.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONKeyMapper.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONModelArray.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONValueTransformer.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONModelError.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONModel.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONModel-umbrella.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Modules/module.modulemap"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/General/Model/RedirectItem.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/Poi.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/General/Model/PlatformUrl.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/General/Model/PictureMeta.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/General/Model/Picture.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/FoodAndDrink.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/Attraction.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/Tour.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/Activity.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/Theme.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/County.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/SmartTourismTaiwanDataProvider.build/Debug-iphonesimulator/SmartTourismTaiwanDataProvider.build/unextended-module.modulemap"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/UIProgressView+AFNetworking.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/UIWebView+AFNetworking.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/UIRefreshControl+AFNetworking.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/UIKit+AFNetworking.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/UIImageView+AFNetworking.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/UIImage+AFNetworking.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/UIButton+AFNetworking.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/UIActivityIndicatorView+AFNetworking.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFNetworkActivityIndicatorManager.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFImageDownloader.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFAutoPurgingImageCache.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFHTTPSessionManager.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFURLSessionManager.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFNetworkReachabilityManager.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFSecurityPolicy.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFURLResponseSerialization.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFURLRequestSerialization.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFNetworking.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFNetworking-umbrella.h"
+- "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Modules/module.modulemap"
+interface-hash: "71007ed700b4f3859cd6429ee04e2d5b"

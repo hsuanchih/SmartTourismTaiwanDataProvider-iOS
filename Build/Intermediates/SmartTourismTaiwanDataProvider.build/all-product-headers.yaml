@@ -1,0 +1,88 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/SmartTourismTaiwanDataProvider.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Activity.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/Activity.h"
+        },
+        {
+          'type': 'file',
+          'name': "Attraction.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/Attraction.h"
+        },
+        {
+          'type': 'file',
+          'name': "County.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/County.h"
+        },
+        {
+          'type': 'file',
+          'name': "FoodAndDrink.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/FoodAndDrink.h"
+        },
+        {
+          'type': 'file',
+          'name': "Picture.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/General/Model/Picture.h"
+        },
+        {
+          'type': 'file',
+          'name': "PictureMeta.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/General/Model/PictureMeta.h"
+        },
+        {
+          'type': 'file',
+          'name': "PlatformUrl.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/General/Model/PlatformUrl.h"
+        },
+        {
+          'type': 'file',
+          'name': "Poi.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/Poi.h"
+        },
+        {
+          'type': 'file',
+          'name': "RedirectItem.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/General/Model/RedirectItem.h"
+        },
+        {
+          'type': 'file',
+          'name': "SmartTourismTaiwanDataProvider-Swift.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/SmartTourismTaiwanDataProvider.framework/Headers/SmartTourismTaiwanDataProvider-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "SmartTourismTaiwanDataProvider.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider.h"
+        },
+        {
+          'type': 'file',
+          'name': "Theme.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/Theme.h"
+        },
+        {
+          'type': 'file',
+          'name': "Tour.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/Poi/Model/Tour.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/SmartTourismTaiwanDataProvider.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/SmartTourismTaiwanDataProvider.build/Debug-iphonesimulator/SmartTourismTaiwanDataProvider.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
