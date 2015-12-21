@@ -7,7 +7,7 @@ under the hood to streamline access to Smart Tourism Taiwan's web services.
 
 ## Usage
 ### Building the framework:
-* Build the framework from source in Xcode
+* Build the framework from source in Xcode & add the framework to your project
 
 ### Using the library:
 * Getting a reference to the data provider:
