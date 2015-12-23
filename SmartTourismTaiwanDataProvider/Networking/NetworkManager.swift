@@ -22,7 +22,7 @@ class NetworkManager {
     }
     
     // API key, app specific
-    private let appKey = "1234"
+    private let appKey = NSBundle.mainBundle().bundleIdentifier!
     
     // API key, common
     private let apiKey = "5uHMVH0nOLku77kdJE74eyNWLKKNTNCF"
