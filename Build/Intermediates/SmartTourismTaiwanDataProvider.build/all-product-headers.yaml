@@ -53,6 +53,11 @@
         },
         {
           'type': 'file',
+          'name': "SmartTourismDataObjectFactory.h",
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/SmartTourismDataObjectFactory.h"
+        },
+        {
+          'type': 'file',
           'name': "SmartTourismTaiwanDataProvider-Swift.h",
           'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/SmartTourismTaiwanDataProvider.framework/Headers/SmartTourismTaiwanDataProvider-Swift.h"
         },

@@ -546,7 +546,7 @@ class SmartTourismDataProvider {
     /**
      * Private wrapper for request execution
      */
-    private func execRequest<T>(
+    private func execRequest<T: AnyObject>(
         method: NetworkManager.RequestMethod,
         resource: String,
         parameters: AnyObject?,
@@ -562,17 +562,47 @@ class SmartTourismDataProvider {
             })
     }
     
+    private func execRequest<T: AnyObject>(
+        method: NetworkManager.RequestMethod,
+        resource: String,
+        parameters: AnyObject?,
+        completionBlock:((NSError?, [T]?)->())?) {
+            
+            unowned let unownedSelf = self
+            networkManager.performRequestWithMethod(
+                method,
+                resource: resource,
+                parameters: parameters,
+                completion: { (error: NSError?, responseObject: AnyObject?)->() in
+                    unownedSelf.handleResponse(error, responseObject: responseObject, completionBlock: completionBlock)
+            })
+    }
+    
     /**
      * Response handler
      */
-    private func handleResponse<T>(
+    private func handleResponse<T: AnyObject>(
         error: NSError?,
         responseObject: AnyObject?,
-        completionBlock:((NSError?, T?)->())?)->() {
+        completionBlock:((NSError?, T?)->())?) {
             
             if let completion = completionBlock {
                 if error == nil {
-                    completion(nil, DataParser.parseResponseObject(responseObject))
+                    completion(nil, DataParser.parseResponseObject(responseObject) as T?)
+                } else {
+                    completion(error, nil)
+                }
+            }
+    }
+    
+    private func handleResponse<T: AnyObject>(
+        error: NSError?,
+        responseObject: AnyObject?,
+        completionBlock:((NSError?, [T]?)->())?) {
+            
+            if let completion = completionBlock {
+                if error == nil {
+                    completion(nil, DataParser.parseResponseObjectAsArray(responseObject) as [T]?)
                 } else {
                     completion(error, nil)
                 }

@@ -1,1 +1,0 @@
- const unsigned char Pods_SmartTourismTaiwanDataProviderVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:Pods_SmartTourismTaiwanDataProvider  PROJECT:Pods-1" "\n"; const double Pods_SmartTourismTaiwanDataProviderVersionNumber __attribute__ ((used)) = (double)1.;

@@ -18,6 +18,7 @@
 #import "PlatformUrl.h"
 #import "Poi.h"
 #import "RedirectItem.h"
+#import "SmartTourismDataObjectFactory.h"
 
 //! Project version number for SmartTourismTaiwanDataProvider.
 FOUNDATION_EXPORT double SmartTourismTaiwanDataProviderVersionNumber;

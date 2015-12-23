@@ -36,6 +36,8 @@
 		A275F5751C27E1B700FA5C20 /* Tour.h in Headers */ = {isa = PBXBuildFile; fileRef = A275F55C1C27E1B700FA5C20 /* Tour.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A275F5761C27E1B700FA5C20 /* Tour.m in Sources */ = {isa = PBXBuildFile; fileRef = A275F55D1C27E1B700FA5C20 /* Tour.m */; };
 		A275F5771C27E1B700FA5C20 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A275F55F1C27E1B700FA5C20 /* NetworkManager.swift */; };
+		A2FDECB11C2AAF5A006BFF34 /* SmartTourismDataObjectFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = A2FDECAF1C2AAF5A006BFF34 /* SmartTourismDataObjectFactory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A2FDECB21C2AAF5A006BFF34 /* SmartTourismDataObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = A2FDECB01C2AAF5A006BFF34 /* SmartTourismDataObjectFactory.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		A275F55C1C27E1B700FA5C20 /* Tour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tour.h; sourceTree = "<group>"; };
 		A275F55D1C27E1B700FA5C20 /* Tour.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tour.m; sourceTree = "<group>"; };
 		A275F55F1C27E1B700FA5C20 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A2FDECAF1C2AAF5A006BFF34 /* SmartTourismDataObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartTourismDataObjectFactory.h; sourceTree = "<group>"; };
+		A2FDECB01C2AAF5A006BFF34 /* SmartTourismDataObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartTourismDataObjectFactory.m; sourceTree = "<group>"; };
 		A4AB9DF20030C47ECA7BC48E /* Pods-SmartTourismTaiwanDataProvider.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTourismTaiwanDataProvider.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SmartTourismTaiwanDataProvider/Pods-SmartTourismTaiwanDataProvider.debug.xcconfig"; sourceTree = "<group>"; };
 		FB83998FFCD5625D18862F24 /* Pods-SmartTourismTaiwanDataProvider.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SmartTourismTaiwanDataProvider.release.xcconfig"; path = "Pods/Target Support Files/Pods-SmartTourismTaiwanDataProvider/Pods-SmartTourismTaiwanDataProvider.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -166,6 +170,8 @@
 		A275F5421C27E1B700FA5C20 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				A2FDECAF1C2AAF5A006BFF34 /* SmartTourismDataObjectFactory.h */,
+				A2FDECB01C2AAF5A006BFF34 /* SmartTourismDataObjectFactory.m */,
 				A275F5431C27E1B700FA5C20 /* DataParser.swift */,
 				A275F5441C27E1B700FA5C20 /* General */,
 				A275F54E1C27E1B700FA5C20 /* Poi */,
@@ -251,6 +257,7 @@
 				A275F5711C27E1B700FA5C20 /* Poi.h in Headers */,
 				A275F5731C27E1B700FA5C20 /* Theme.h in Headers */,
 				A275F5611C27E1B700FA5C20 /* Picture.h in Headers */,
+				A2FDECB11C2AAF5A006BFF34 /* SmartTourismDataObjectFactory.h in Headers */,
 				A275F5651C27E1B700FA5C20 /* PlatformUrl.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +400,7 @@
 				A275F5621C27E1B700FA5C20 /* Picture.m in Sources */,
 				A275F5701C27E1B700FA5C20 /* FoodAndDrink.m in Sources */,
 				A275F5661C27E1B700FA5C20 /* PlatformUrl.m in Sources */,
+				A2FDECB21C2AAF5A006BFF34 /* SmartTourismDataObjectFactory.m in Sources */,
 				A275F5681C27E1B700FA5C20 /* RedirectItem.m in Sources */,
 				A275F5601C27E1B700FA5C20 /* DataParser.swift in Sources */,
 				A275F5411C27E15900FA5C20 /* SmartTourismDataProvider.swift in Sources */,
