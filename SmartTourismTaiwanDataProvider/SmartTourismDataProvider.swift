@@ -543,6 +543,34 @@ class SmartTourismDataProvider {
         }
     }
     
+    
+    /**
+     * Language support
+     */
+    enum SupportedLanguage : String {
+        
+        case zh_tw = "zh_tw"
+        case en_us = "en_us"
+        case ja_jp = "ja_jp"
+        
+        func stringValue() -> String {
+            return self.rawValue;
+        }
+    }
+    
+    var supportedLanguage : SupportedLanguage? {
+        get {
+            if let supportedLanguage = self.networkManager.supportedLanguage {
+                return SupportedLanguage(rawValue: supportedLanguage)
+            }
+            return nil
+        }
+        set(language) {
+            self.networkManager.supportedLanguage = language?.stringValue()
+        }
+    }
+    
+    
     /**
      * Private wrapper for request execution
      */

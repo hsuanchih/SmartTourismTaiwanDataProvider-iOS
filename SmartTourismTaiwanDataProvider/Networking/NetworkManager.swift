@@ -22,7 +22,7 @@ class NetworkManager {
     }
     
     // API key, app specific
-    private let appKey = NSBundle.mainBundle().bundleIdentifier!
+    private static let appKey = NSBundle.mainBundle().bundleIdentifier!
     
     // API key, common
     private let apiKey = "5uHMVH0nOLku77kdJE74eyNWLKKNTNCF"
@@ -37,6 +37,7 @@ class NetworkManager {
     private var httpClient: AFHTTPSessionManager = {
         let httpSessionManager = AFHTTPSessionManager(baseURL: NSURL(string: baseUrl))
         httpSessionManager.responseSerializer = AFJSONResponseSerializer()
+        httpSessionManager.requestSerializer.setValue(appKey, forHTTPHeaderField: "apiKey")
         httpSessionManager.securityPolicy.allowInvalidCertificates = true
         return httpSessionManager
     }()
@@ -60,6 +61,18 @@ class NetworkManager {
     // MARK: Network status query
     private func networkStatus() -> AFNetworkReachabilityStatus {
         return self.httpClient.reachabilityManager.networkReachabilityStatus
+    }
+    
+    // MARK: Language support
+    var supportedLanguage : String? {
+        get {
+            return self.httpClient.requestSerializer.valueForHTTPHeaderField("language")
+        }
+        set(language) {
+            if language != nil {
+                self.httpClient.requestSerializer.setValue(language, forHTTPHeaderField: "language")
+            }
+        }
     }
     
     // MARK: Generic web service request handler
