@@ -9,9 +9,9 @@
 import Foundation
 import JSONModel
 
-class SmartTourismDataProvider {
+public class SmartTourismDataProvider {
     
-    static let instance = SmartTourismDataProvider()
+    public static let instance = SmartTourismDataProvider()
     
     /**
      * Reference to NetworkManager instance
@@ -24,7 +24,7 @@ class SmartTourismDataProvider {
     /**
      * Queries a complete list of counties
      */
-    func getCountyList(
+    public func getCountyList(
         completionBlock:((NSError?, [County]?)->())?) {
         
             execRequest(
@@ -37,7 +37,7 @@ class SmartTourismDataProvider {
     /**
      * Queries a complete list of themes
      */
-    func getThemeList(
+    public func getThemeList(
         completionBlock:((NSError?, [Theme]?)->())?) {
             
             execRequest(
@@ -50,7 +50,7 @@ class SmartTourismDataProvider {
     /**
      * Gets theme info for a particular theme ID
      */
-    func getThemeByID(
+    public func getThemeByID(
         themeID: String,
         completionBlock:((NSError?, Theme?)->())?) {
             
@@ -64,7 +64,7 @@ class SmartTourismDataProvider {
     /**
      * Gets theme info for a particular theme ID relative to specific location
      */
-    func getThemeByID(
+    public func getThemeByID(
         themeID: String,
         latitude: Float,
         longitude: Float,
@@ -83,7 +83,7 @@ class SmartTourismDataProvider {
     /**
      * Finds a particular activity by activity ID
      */
-    func getActivityByID(
+    public func getActivityByID(
         activityID: String,
         completionBlock:((NSError?, Activity?)->())?) {
         
@@ -97,7 +97,7 @@ class SmartTourismDataProvider {
     /**
      * Queries a complete list of activities
      */
-    func getActivityList(
+    public func getActivityList(
         completionBlock:((NSError?, [Activity]?)->())?) {
         
             execRequest(
@@ -110,7 +110,7 @@ class SmartTourismDataProvider {
     /**
      * Gets the top ten activities
      */
-    func getTopTenActivities(
+    public func getTopTenActivities(
         completionBlock:((NSError?, [Activity]?)->())?) {
         
             execRequest(
@@ -123,7 +123,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of activities for a county
      */
-    func getActivitiesByCountyID(
+    public func getActivitiesByCountyID(
         countyID: String,
         completionBlock:((NSError?, [Activity]?)->())?) {
         
@@ -137,7 +137,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of activities for a theme
      */
-    func getActivitiesByThemeID(
+    public func getActivitiesByThemeID(
         themeID: String,
         completionBlock:((NSError?, [Activity]?)->())?) {
         
@@ -151,7 +151,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of activities specified by a group of criteria
      */
-    func getActivitiesByCriteria(
+    public func getActivitiesByCriteria(
         themeID: String,
         countyID: String,
         latitude: Float,
@@ -177,7 +177,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of activities within a the specified geofence
      */
-    func getActivitiesInGeofence(
+    public func getActivitiesInGeofence(
         latitude: Float,
         longitude: Float,
         distance: Int,
@@ -197,7 +197,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of activities as specified by rank
      */
-    func getActivitiesByRank(
+    public func getActivitiesByRank(
         rank: Int,
         completionBlock:((NSError?, [Activity]?)->())?) {
             
@@ -211,7 +211,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of activities for a specific date
      */
-    func getActivitiesByDate(date: String,
+    public func getActivitiesByDate(date: String,
         completionBlock:((NSError?, [Activity]?)->())?) {
         
             execRequest(
@@ -224,7 +224,7 @@ class SmartTourismDataProvider {
     /**
      * Finds a particular attraction by attraction ID
      */
-    func getAttractionByID(
+    public func getAttractionByID(
         attractionID: String,
         completionBlock:((NSError?, Attraction?)->())?) {
             
@@ -238,7 +238,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of attractions by theme ID
      */
-    func getAttractionsByThemeID(
+    public func getAttractionsByThemeID(
         themeID: String,
         completionBlock:((NSError?, [Attraction]?)->())?) {
         
@@ -252,7 +252,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of attractions as specified by rank
      */
-    func getAttractionsByRank(
+    public func getAttractionsByRank(
         rank: Int,
         completionBlock:((NSError?, [Attraction]?)->())?) {
         
@@ -266,7 +266,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of attractions for a county
      */
-    func getAttractionsByCountyID(
+    public func getAttractionsByCountyID(
         countyID: String,
         completionBlock:((NSError?, [Attraction]?)->())?) {
         
@@ -280,7 +280,7 @@ class SmartTourismDataProvider {
     /**
      * Gets the top ten attractions
      */
-    func getTopTenAttractions(
+    public func getTopTenAttractions(
         completionBlock:((NSError?, [Attraction]?)->())?) {
             
             execRequest(
@@ -293,7 +293,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of attractions specified by a group of criteria
      */
-    func getAttractionsByCriteria(
+    public func getAttractionsByCriteria(
         themeID: String,
         countyID: String,
         latitude: Float,
@@ -319,7 +319,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of attractions within a the specified geofence
      */
-    func getAttractionsInGeofence(
+    public func getAttractionsInGeofence(
         latitude: Float,
         longitude: Float,
         distance: Int,
@@ -339,7 +339,7 @@ class SmartTourismDataProvider {
     /**
      * Finds a particular tour by tourID
      */
-    func getTourByID(
+    public func getTourByID(
         tourID: String,
         completionBlock:((NSError?, Tour?)->())?) {
         
@@ -353,7 +353,7 @@ class SmartTourismDataProvider {
     /**
      * Queries a list of tours
      */
-    func getTourList(
+    public func getTourList(
         completionBlock:((NSError?, [Tour]?)->())?) {
             
             execRequest(
@@ -366,7 +366,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of tours by attraction ID
      */
-    func getToursByAttractionID(
+    public func getToursByAttractionID(
         attractionID: String,
         completionBlock:((NSError?, [Tour]?)->())?) {
         
@@ -380,7 +380,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of tours by theme ID
      */
-    func getToursByThemeID(
+    public func getToursByThemeID(
         themeID: String,
         completionBlock:((NSError?, [Tour]?)->())?) {
         
@@ -394,7 +394,7 @@ class SmartTourismDataProvider {
     /**
      * Finds a particular food & drink venue by ID
      */
-    func getFoodAndDrinkByID(
+    public func getFoodAndDrinkByID(
         foodAndDrinkID: String,
         completionBlock:((NSError?, FoodAndDrink?)->())?) {
             
@@ -408,7 +408,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of food & drink venues by theme ID
      */
-    func getFoodAndDrinkByThemeID(
+    public func getFoodAndDrinkByThemeID(
         themeID: String,
         completionBlock:((NSError?, [FoodAndDrink]?)->())?) {
             
@@ -422,7 +422,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of food & drink venues by county ID
      */
-    func getFoodAndDrinkByCountyID(
+    public func getFoodAndDrinkByCountyID(
         countyID: String,
         completionBlock:((NSError?, [FoodAndDrink]?)->())?) {
             
@@ -436,7 +436,7 @@ class SmartTourismDataProvider {
     /**
      * Gets the top ten food & drink venues
      */
-    func getTopTenFoodAndDrink(
+    public func getTopTenFoodAndDrink(
         completionBlock:((NSError?, [FoodAndDrink]?)->())?) {
             
             execRequest(
@@ -449,7 +449,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of food & drink venues specified by a group of criteria
      */
-    func getFoodAndDrinkByCriteria(
+    public func getFoodAndDrinkByCriteria(
         themeID: String,
         countyID: String,
         latitude: Float,
@@ -475,7 +475,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of food & drink venues within a the specified geofence
      */
-    func getFoodAndDrinkInGeofence(
+    public func getFoodAndDrinkInGeofence(
         latitude: Float,
         longitude: Float,
         distance: Int,
@@ -495,7 +495,7 @@ class SmartTourismDataProvider {
     /**
      * Gets a list of food & drink venues as specified by rank
      */
-    func getFoodAndDrinkByRank(
+    public func getFoodAndDrinkByRank(
         rank: Int,
         completionBlock:((NSError?, [FoodAndDrink]?)->())?) {
             
@@ -547,7 +547,7 @@ class SmartTourismDataProvider {
     /**
      * Language support
      */
-    enum SupportedLanguage : String {
+    public enum SupportedLanguage : String {
         
         case zh_tw = "zh_tw"
         case en_us = "en_us"
@@ -558,7 +558,7 @@ class SmartTourismDataProvider {
         }
     }
     
-    var supportedLanguage : SupportedLanguage? {
+    public var supportedLanguage : SupportedLanguage? {
         get {
             if let supportedLanguage = self.networkManager.supportedLanguage {
                 return SupportedLanguage(rawValue: supportedLanguage)

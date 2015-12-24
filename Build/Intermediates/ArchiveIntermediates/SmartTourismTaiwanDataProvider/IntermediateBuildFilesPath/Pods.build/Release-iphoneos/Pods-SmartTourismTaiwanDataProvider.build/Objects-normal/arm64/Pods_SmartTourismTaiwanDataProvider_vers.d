@@ -1,0 +1,2 @@
+dependencies: \
+  /Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/ArchiveIntermediates/SmartTourismTaiwanDataProvider/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/Pods-SmartTourismTaiwanDataProvider.build/DerivedSources/Pods_SmartTourismTaiwanDataProvider_vers.c

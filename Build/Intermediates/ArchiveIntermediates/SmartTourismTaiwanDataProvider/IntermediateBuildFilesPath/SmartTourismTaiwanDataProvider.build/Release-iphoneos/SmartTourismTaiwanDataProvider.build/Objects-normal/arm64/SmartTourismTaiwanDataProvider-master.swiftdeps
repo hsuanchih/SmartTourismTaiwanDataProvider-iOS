@@ -1,0 +1,7 @@
+version: "Apple Swift version 2.1.1 (swiftlang-700.1.101.15 clang-700.1.81)"
+options: "a4cabc4488786074ac12f3074f418044"
+build_time: [504253390, 51799000]
+inputs:
+  "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/SmartTourismDataProvider.swift": [9223372036854775807, 0]
+  "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Networking/NetworkManager.swift": [9223372036854775807, 0]
+  "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/SmartTourismTaiwanDataProvider/Data/DataParser.swift": [9223372036854775807, 0]

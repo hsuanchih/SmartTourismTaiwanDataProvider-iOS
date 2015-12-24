@@ -1,2 +1,0 @@
-dependencies: \
-  /Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/SmartTourismTaiwanDataProvider.build/Debug-iphonesimulator/SmartTourismTaiwanDataProvider.build/DerivedSources/SmartTourismTaiwanDataProvider_vers.c

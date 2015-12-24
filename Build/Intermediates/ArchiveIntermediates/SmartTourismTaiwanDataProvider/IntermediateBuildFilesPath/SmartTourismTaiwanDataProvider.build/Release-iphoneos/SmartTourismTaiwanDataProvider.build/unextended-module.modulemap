@@ -1,0 +1,10 @@
+framework module SmartTourismTaiwanDataProvider {
+  umbrella header "SmartTourismTaiwanDataProvider.h"
+
+  export *
+  module * { export * }
+}
+
+module SmartTourismTaiwanDataProvider.__Swift {
+    exclude header "SmartTourismTaiwanDataProvider-Swift.h"
+}
