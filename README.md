@@ -47,9 +47,17 @@ dataProvider.getCountyList { (error: NSError?, countyList: [County]?) -> () in
 }
 ```
 
+* Setting the Language Pack (Optional):
+```Swift
+/**
+ * Set the language pack to English (US)
+ */
+dataProvider.supportedLanguage = SmartTourismDataProvider.SupportedLanguage.en_us
+```
+
 
 ## TODO
-#####Language toggle, Intelligent & ACL APIs Pending
+#####Intelligent & ACL APIs Pending
 
 ## License
 #####Licensed under the MIT License.
