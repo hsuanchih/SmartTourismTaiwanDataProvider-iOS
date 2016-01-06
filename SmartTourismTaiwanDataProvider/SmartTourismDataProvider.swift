@@ -506,6 +506,20 @@ public class SmartTourismDataProvider {
                 completionBlock: completionBlock)
     }
     
+    /**
+     * Fetches a list of Poi details corresponding to the Poi IDs and types provided
+     */
+    public func postPoiService(
+        poi : [[String: String]],
+        completionBlock:((NSError?, [Poi]?)->())?) {
+            
+            execRequest(NetworkManager.RequestMethod.POST,
+                resource: TypeResourceURI.PoiService.stringValue(),
+                parameters: poi,
+                completionBlock: completionBlock)
+            
+    }
+    
     
     /**
      * Type resource URI to append to path
@@ -518,6 +532,7 @@ public class SmartTourismDataProvider {
         case Attraction   = "attraction/"
         case Tour         = "tour/"
         case FoodAndDrink = "foodanddrink/"
+        case PoiService   = "poiService/"
         
         func stringValue() -> String {
             return self.rawValue

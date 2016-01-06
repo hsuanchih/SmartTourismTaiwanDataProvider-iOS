@@ -37,6 +37,7 @@ class NetworkManager {
     private var httpClient: AFHTTPSessionManager = {
         let httpSessionManager = AFHTTPSessionManager(baseURL: NSURL(string: baseUrl))
         httpSessionManager.responseSerializer = AFJSONResponseSerializer()
+        httpSessionManager.requestSerializer = AFJSONRequestSerializer()
         httpSessionManager.requestSerializer.setValue(appKey, forHTTPHeaderField: "apiKey")
         httpSessionManager.securityPolicy.allowInvalidCertificates = true
         return httpSessionManager
@@ -83,16 +84,16 @@ class NetworkManager {
         completion: ((NSError?, AnyObject?)->())?) {
             
             unowned let unownedSelf = self
-            var params = parameters as? [String:AnyObject]
-            if params != nil {
-                params!["apikey"] = apiKey
-            } else {
-                params = ["apikey": apiKey]
-            }
             
             switch method {
             
             case .GET:
+                var params = parameters as? [String:AnyObject]
+                if params != nil {
+                    params!["apikey"] = apiKey
+                } else {
+                    params = ["apikey": apiKey]
+                }
                 self.httpClient.GET(
                     smartTourismResourcePrefix + resource,
                     parameters: params,
@@ -113,7 +114,28 @@ class NetworkManager {
                 
                 })
                 
-            case .POST, .PUT, .DELETE: break
+            case .POST:
+                self.httpClient.POST(
+                    smartTourismResourcePrefix + resource + "?apikey=" + apiKey,
+                    parameters: parameters,
+                    progress: nil,
+                    success: { (task: NSURLSessionDataTask, responseObject: AnyObject?) -> Void in
+                        
+                        unownedSelf.onSuccess(
+                            task,
+                            responseObject: responseObject,
+                            completionBlock: completion)
+                        
+                    }, failure: { (task: NSURLSessionDataTask?, error: NSError) -> Void in
+                        
+                        unownedSelf.onFailure(
+                            task,
+                            error: error,
+                            completionBlock: completion)
+                        
+                })
+                
+            case .PUT, .DELETE: break
             }
     }
     

@@ -1,0 +1,1 @@
+ const unsigned char SmartTourismTaiwanDataProviderTestsVersionString[] __attribute__ ((used)) = "@(#)PROGRAM:SmartTourismTaiwanDataProviderTests  PROJECT:SmartTourismTaiwanDataProvider-1" "\n"; const double SmartTourismTaiwanDataProviderTestsVersionNumber __attribute__ ((used)) = (double)1.;
