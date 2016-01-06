@@ -17,6 +17,7 @@
                                                        @"description"  : @"desc",
                                                        @"pictures"     : @"pictures",
                                                        @"subthemeList" : @"subthemeList",
+                                                       @"poiList"      : @"poiList",
                                                        @"type"         : @"type"
                                                         }];
 }
