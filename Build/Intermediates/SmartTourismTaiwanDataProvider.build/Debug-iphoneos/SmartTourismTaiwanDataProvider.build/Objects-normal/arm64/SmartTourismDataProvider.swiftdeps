@@ -13,27 +13,27 @@ provides-member:
 - ["OC30SmartTourismTaiwanDataProvider24SmartTourismDataProvider17SupportedLanguage", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "StringLiteralType"
-- "FoodAndDrink"
-- "Theme"
-- "SmartTourismDataProvider"
 - !private "AnyObject"
-- "Attraction"
 - "Int"
-- "NetworkManager"
+- "StringLiteralType"
+- "String"
+- "FoodAndDrink"
+- !private "+"
+- "Theme"
+- "Float"
+- "Attraction"
 - "=="
 - !private "~="
 - !private "Dictionary"
-- "Activity"
+- "SmartTourismDataProvider"
 - !private "UnicodeScalarType"
-- !private "+"
 - !private "DataParser"
 - "Poi"
-- "Float"
+- "NetworkManager"
+- "Activity"
+- "Tour"
 - "NSError"
 - "County"
-- "String"
-- "Tour"
 depends-member:
 - !private ["PSs9AnyObject", "CatResourceURI"]
 - !private ["PSs9AnyObject", "DataParser"]
