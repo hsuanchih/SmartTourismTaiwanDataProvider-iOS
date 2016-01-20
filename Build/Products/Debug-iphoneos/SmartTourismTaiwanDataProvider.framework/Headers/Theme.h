@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSString<Optional> *desc;
 @property (nonatomic, strong) NSArray<Optional> *pictures;
 @property (nonatomic, strong) NSArray<Optional> *subthemeList;
+@property (nonatomic, strong) NSArray<Optional> *poiList;
 @property (nonatomic, strong) NSNumber<Optional> *type;
 
 @end

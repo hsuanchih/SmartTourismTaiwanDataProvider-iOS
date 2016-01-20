@@ -13,26 +13,27 @@ provides-member:
 - ["OC30SmartTourismTaiwanDataProvider24SmartTourismDataProvider17SupportedLanguage", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "SmartTourismDataProvider"
-- "NetworkManager"
-- "Theme"
+- !private "AnyObject"
 - "String"
-- "Attraction"
+- "Int"
+- "Activity"
+- "FoodAndDrink"
+- "NetworkManager"
+- !private "Dictionary"
+- "NSError"
+- "Tour"
 - "Float"
+- !private "+"
 - !private "DataParser"
+- "County"
+- "SmartTourismDataProvider"
+- !private "UnicodeScalarType"
 - "StringLiteralType"
 - !private "~="
 - "=="
-- !private "AnyObject"
-- !private "+"
-- "FoodAndDrink"
-- !private "UnicodeScalarType"
-- "County"
-- "Tour"
-- "Int"
-- !private "Dictionary"
-- "NSError"
-- "Activity"
+- "Theme"
+- "Poi"
+- "Attraction"
 depends-member:
 - !private ["PSs9AnyObject", "CatResourceURI"]
 - !private ["PSs9AnyObject", "DataParser"]
@@ -93,6 +94,8 @@ depends-member:
 - !private ["PSs9Equatable", "FoodAndDrink"]
 - !private ["PSs9Equatable", "GET"]
 - !private ["PSs9Equatable", "Key"]
+- !private ["PSs9Equatable", "POST"]
+- !private ["PSs9Equatable", "PoiService"]
 - ["PSs9Equatable", "RawValue"]
 - !private ["PSs9Equatable", "Theme"]
 - !private ["PSs9Equatable", "Tour"]
@@ -119,6 +122,8 @@ depends-member:
 - !private ["PSs8Hashable", "FoodAndDrink"]
 - !private ["PSs8Hashable", "GET"]
 - !private ["PSs8Hashable", "Key"]
+- !private ["PSs8Hashable", "POST"]
+- !private ["PSs8Hashable", "PoiService"]
 - ["PSs8Hashable", "RawValue"]
 - !private ["PSs8Hashable", "Theme"]
 - !private ["PSs8Hashable", "Tour"]
@@ -185,6 +190,7 @@ depends-member:
 - !private ["PSs16RawRepresentable", "FindByTheme"]
 - !private ["PSs16RawRepresentable", "FindTopTen"]
 - !private ["PSs16RawRepresentable", "FoodAndDrink"]
+- !private ["PSs16RawRepresentable", "PoiService"]
 - ["PSs16RawRepresentable", "RawValue"]
 - !private ["PSs16RawRepresentable", "Theme"]
 - !private ["PSs16RawRepresentable", "Tour"]
@@ -194,6 +200,7 @@ depends-member:
 - !private ["PSs16RawRepresentable", "stringValue"]
 - ["PSs16RawRepresentable", ""]
 - !private ["OC30SmartTourismTaiwanDataProvider14NetworkManager13RequestMethod", "GET"]
+- !private ["OC30SmartTourismTaiwanDataProvider14NetworkManager13RequestMethod", "POST"]
 - !private ["PSs12SequenceType", "Key"]
 - !private ["PSs12SequenceType", "Value"]
 - !private ["PSs17SignedIntegerType", "hashValue"]
@@ -209,6 +216,7 @@ depends-member:
 - ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "Int"]
 - ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "NSError"]
 - ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "NetworkManager"]
+- ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "Poi"]
 - ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "SmartTourismDataProvider"]
 - ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "String"]
 - ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "SupportedLanguage"]
@@ -251,6 +259,7 @@ depends-member:
 - ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "init"]
 - ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "instance"]
 - ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "networkManager"]
+- ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "postPoiService"]
 - ["C30SmartTourismTaiwanDataProvider24SmartTourismDataProvider", "supportedLanguage"]
 - !private ["PSs10Strideable", "hashValue"]
 - ["SS", "deinit"]
@@ -402,4 +411,4 @@ depends-external:
 - "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/AFNetworking.framework/Headers/AFNetworking.h"
 - "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/AFNetworking.framework/Headers/AFNetworking-umbrella.h"
 - "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/AFNetworking.framework/Modules/module.modulemap"
-interface-hash: "90bf15eb199c173031d28b2e6927039d"
+interface-hash: "fdae95482026f45105894ae82e5940e2"

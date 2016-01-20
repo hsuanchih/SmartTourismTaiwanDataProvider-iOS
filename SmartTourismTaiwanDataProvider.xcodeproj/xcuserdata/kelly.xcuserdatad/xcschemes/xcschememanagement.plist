@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>SmartTourismTaiwanDataProvider.xcscheme</key>
+		<key>SmartTourismTaiwanDataProvider-Universal.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>SmartTourismTaiwanDataProvider.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -18,6 +23,21 @@
 			<true/>
 		</dict>
 		<key>A275F5071C27DC8100FA5C20</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A2D5B30D1C44A09F00DAD8DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A2F74F081C44D16A0071C510</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A2F74F0D1C44D25A0071C510</key>
 		<dict>
 			<key>primary</key>
 			<true/>

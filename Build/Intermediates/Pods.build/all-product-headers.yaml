@@ -4,7 +4,7 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers",
+      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/AFNetworking.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -34,7 +34,7 @@
         {
           'type': 'file',
           'name': "AFNetworking-Swift.h",
-          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Headers/AFNetworking-Swift.h"
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/AFNetworking.framework/Headers/AFNetworking-Swift.h"
         },
         {
           'type': 'file',
@@ -110,18 +110,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/AFNetworking.framework/Modules",
+      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/AFNetworking.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/Pods.build/Debug-iphonesimulator/AFNetworking.build/module.modulemap"
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/Pods.build/Debug-iphoneos/AFNetworking.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers",
+      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/JSONModel.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -146,7 +146,7 @@
         {
           'type': 'file',
           'name': "JSONModel-Swift.h",
-          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Headers/JSONModel-Swift.h"
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/JSONModel.framework/Headers/JSONModel-Swift.h"
         },
         {
           'type': 'file',
@@ -192,18 +192,18 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/JSONModel.framework/Modules",
+      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/JSONModel.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/Pods.build/Debug-iphonesimulator/JSONModel.build/module.modulemap"
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/Pods.build/Debug-iphoneos/JSONModel.build/module.modulemap"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/Pods_SmartTourismTaiwanDataProvider.framework/Headers",
+      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/Pods_SmartTourismTaiwanDataProvider.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -213,18 +213,18 @@
         {
           'type': 'file',
           'name': "Pods_SmartTourismTaiwanDataProvider-Swift.h",
-          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/Pods_SmartTourismTaiwanDataProvider.framework/Headers/Pods_SmartTourismTaiwanDataProvider-Swift.h"
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/Pods_SmartTourismTaiwanDataProvider.framework/Headers/Pods_SmartTourismTaiwanDataProvider-Swift.h"
         }
       ]
     },
     {
       'type': 'directory',
-      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/Pods_SmartTourismTaiwanDataProvider.framework/Modules",
+      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/Pods_SmartTourismTaiwanDataProvider.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-SmartTourismTaiwanDataProvider.build/module.modulemap"
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/Pods.build/Debug-iphoneos/Pods-SmartTourismTaiwanDataProvider.build/module.modulemap"
         }
       ]
     }

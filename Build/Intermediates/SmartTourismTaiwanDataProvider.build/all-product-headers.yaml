@@ -4,7 +4,7 @@
   'roots': [
     {
       'type': 'directory',
-      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/SmartTourismTaiwanDataProvider.framework/Headers",
+      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/SmartTourismTaiwanDataProvider.framework/Headers",
       'contents': [
         {
           'type': 'file',
@@ -59,7 +59,7 @@
         {
           'type': 'file',
           'name': "SmartTourismTaiwanDataProvider-Swift.h",
-          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/SmartTourismTaiwanDataProvider.framework/Headers/SmartTourismTaiwanDataProvider-Swift.h"
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/SmartTourismTaiwanDataProvider.framework/Headers/SmartTourismTaiwanDataProvider-Swift.h"
         },
         {
           'type': 'file',
@@ -80,12 +80,12 @@
     },
     {
       'type': 'directory',
-      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphonesimulator/SmartTourismTaiwanDataProvider.framework/Modules",
+      'name': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/SmartTourismTaiwanDataProvider.framework/Modules",
       'contents': [
         {
           'type': 'file',
           'name': "module.modulemap",
-          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/SmartTourismTaiwanDataProvider.build/Debug-iphonesimulator/SmartTourismTaiwanDataProvider.build/module.modulemap"
+          'external-contents': "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Intermediates/SmartTourismTaiwanDataProvider.build/Debug-iphoneos/SmartTourismTaiwanDataProvider.build/module.modulemap"
         }
       ]
     }

@@ -7,12 +7,12 @@ provides-member:
 - ["C30SmartTourismTaiwanDataProvider10DataParser", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "SmartTourismDataObjectFactory"
+- "AnyObject"
 - "DataParser"
+- !private "SmartTourismDataObjectFactory"
+- !private "NSClassFromString"
 - !private "NSObject"
 - !private "NSStringFromClass"
-- !private "NSClassFromString"
-- "AnyObject"
 depends-member:
 - !private ["PSs9AnyObject", "NSClassFromString"]
 - !private ["PSs9AnyObject", "NSStringFromClass"]

@@ -9,35 +9,39 @@ provides-member:
 - ["OC30SmartTourismTaiwanDataProvider14NetworkManager13RequestMethod", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- "NSURLSessionDataTask"
-- !private "!="
-- "=="
-- !private "Void"
 - "AFHTTPSessionManager"
-- "NSURL"
-- "StringLiteralType"
-- "String"
-- !private "Dictionary"
 - "AFJSONResponseSerializer"
-- "AnyObject"
-- "NSBundle"
-- !private "AFNetworkReachabilityStatus"
-- !private "NSNotificationCenter"
-- !private "NSHTTPURLResponse"
-- "NetworkManager"
-- "NSError"
+- "NSURL"
 - "+"
+- !private "Void"
+- !private "!="
+- "NSError"
+- !private "AFNetworkReachabilityStatus"
+- "String"
+- "NSBundle"
 - "BooleanLiteralType"
+- "NetworkManager"
+- !private "Dictionary"
+- !private "NSHTTPURLResponse"
+- "AnyObject"
+- "StringLiteralType"
+- "NSURLSessionDataTask"
+- "=="
+- !private "NSNotificationCenter"
+- "AFJSONRequestSerializer"
 depends-member:
+- ["CSo23AFHTTPRequestSerializer", "init"]
 - ["CSo23AFHTTPRequestSerializer", "setValue"]
 - !private ["CSo23AFHTTPRequestSerializer", "valueForHTTPHeaderField"]
 - ["CSo24AFHTTPResponseSerializer", "init"]
 - !private ["CSo20AFHTTPSessionManager", "GET"]
+- !private ["CSo20AFHTTPSessionManager", "POST"]
 - ["CSo20AFHTTPSessionManager", "init"]
 - !private ["CSo20AFHTTPSessionManager", "reachabilityManager"]
 - ["CSo20AFHTTPSessionManager", "requestSerializer"]
 - ["CSo20AFHTTPSessionManager", "responseSerializer"]
 - ["CSo20AFHTTPSessionManager", "securityPolicy"]
+- ["CSo23AFJSONRequestSerializer", "init"]
 - ["CSo24AFJSONResponseSerializer", "init"]
 - !private ["CSo28AFNetworkReachabilityManager", "networkReachabilityStatus"]
 - !private ["CSo28AFNetworkReachabilityManager", "setReachabilityStatusChangeBlock"]
@@ -46,22 +50,26 @@ depends-member:
 - !private ["OSC27AFNetworkReachabilityStatus", "ReachableViaWWAN"]
 - !private ["OSC27AFNetworkReachabilityStatus", "ReachableViaWiFi"]
 - ["CSo16AFSecurityPolicy", "allowInvalidCertificates"]
+- ["PSo25AFURLRequestSerialization", "init"]
 - ["PSo25AFURLRequestSerialization", "setValue"]
 - !private ["PSo25AFURLRequestSerialization", "valueForHTTPHeaderField"]
 - ["PSo26AFURLResponseSerialization", "init"]
 - !private ["CSo19AFURLSessionManager", "GET"]
+- !private ["CSo19AFURLSessionManager", "POST"]
 - ["CSo19AFURLSessionManager", "init"]
 - !private ["CSo19AFURLSessionManager", "reachabilityManager"]
 - ["CSo19AFURLSessionManager", "requestSerializer"]
 - ["CSo19AFURLSessionManager", "responseSerializer"]
 - ["CSo19AFURLSessionManager", "securityPolicy"]
 - ["PSs9AnyObject", "AFHTTPSessionManager"]
+- ["PSs9AnyObject", "AFJSONRequestSerializer"]
 - ["PSs9AnyObject", "AFJSONResponseSerializer"]
 - !private ["PSs9AnyObject", "GET"]
 - ["PSs9AnyObject", "NSBundle"]
 - !private ["PSs9AnyObject", "NSError"]
 - !private ["PSs9AnyObject", "NSNotificationCenter"]
 - ["PSs9AnyObject", "NSURL"]
+- !private ["PSs9AnyObject", "POST"]
 - !private ["PSs9AnyObject", "String"]
 - ["PSs9AnyObject", "allowInvalidCertificates"]
 - !private ["PSs9AnyObject", "apiKey"]
@@ -98,6 +106,7 @@ depends-member:
 - !private ["PSs11BooleanType", "_getBuiltinLogicValue"]
 - !private ["PSs11CVarArgType", "GET"]
 - !private ["PSs11CVarArgType", "IntegerLiteralType"]
+- !private ["PSs11CVarArgType", "POST"]
 - ["PSs11CVarArgType", "allowInvalidCertificates"]
 - ["PSs11CVarArgType", "bundleIdentifier"]
 - !private ["PSs11CVarArgType", "defaultCenter"]
@@ -134,6 +143,7 @@ depends-member:
 - !private ["PSs23CustomStringConvertible", "GET"]
 - !private ["PSs23CustomStringConvertible", "IntegerLiteralType"]
 - !private ["PSs23CustomStringConvertible", "Key"]
+- !private ["PSs23CustomStringConvertible", "POST"]
 - !private ["PSs23CustomStringConvertible", "Value"]
 - !private ["PSs23CustomStringConvertible", "_getBuiltinLogicValue"]
 - ["PSs23CustomStringConvertible", "allowInvalidCertificates"]
@@ -224,6 +234,7 @@ depends-member:
 - !private ["PSs8Hashable", "valueForHTTPHeaderField"]
 - ["PSs8Hashable", ""]
 - !private ["PSo6Ignore", "GET"]
+- !private ["PSo6Ignore", "POST"]
 - ["PSo6Ignore", "allowInvalidCertificates"]
 - ["PSo6Ignore", "bundleIdentifier"]
 - !private ["PSo6Ignore", "defaultCenter"]
@@ -243,6 +254,7 @@ depends-member:
 - !private ["PSo6Ignore", "valueForHTTPHeaderField"]
 - !private ["SQ", "deinit"]
 - !private ["PSo5Index", "GET"]
+- !private ["PSo5Index", "POST"]
 - ["PSo5Index", "allowInvalidCertificates"]
 - ["PSo5Index", "bundleIdentifier"]
 - !private ["PSo5Index", "defaultCenter"]
@@ -283,6 +295,7 @@ depends-member:
 - ["CSo8NSBundle", "bundleIdentifier"]
 - ["CSo8NSBundle", "mainBundle"]
 - !private ["PSo8NSCoding", "GET"]
+- !private ["PSo8NSCoding", "POST"]
 - ["PSo8NSCoding", "allowInvalidCertificates"]
 - ["PSo8NSCoding", "init"]
 - !private ["PSo8NSCoding", "reachabilityManager"]
@@ -293,6 +306,7 @@ depends-member:
 - !private ["PSo8NSCoding", "statusCode"]
 - !private ["PSo8NSCoding", "valueForHTTPHeaderField"]
 - !private ["PSo9NSCopying", "GET"]
+- !private ["PSo9NSCopying", "POST"]
 - ["PSo9NSCopying", "allowInvalidCertificates"]
 - ["PSo9NSCopying", "init"]
 - !private ["PSo9NSCopying", "reachabilityManager"]
@@ -308,6 +322,7 @@ depends-member:
 - !private ["CSo20NSNotificationCenter", "defaultCenter"]
 - !private ["CSo20NSNotificationCenter", "postNotificationName"]
 - !private ["CSo8NSObject", "GET"]
+- !private ["CSo8NSObject", "POST"]
 - ["CSo8NSObject", "allowInvalidCertificates"]
 - ["CSo8NSObject", "bundleIdentifier"]
 - !private ["CSo8NSObject", "defaultCenter"]
@@ -327,6 +342,7 @@ depends-member:
 - !private ["CSo8NSObject", "statusCode"]
 - !private ["CSo8NSObject", "valueForHTTPHeaderField"]
 - !private ["PSo16NSObjectProtocol", "GET"]
+- !private ["PSo16NSObjectProtocol", "POST"]
 - ["PSo16NSObjectProtocol", "allowInvalidCertificates"]
 - ["PSo16NSObjectProtocol", "bundleIdentifier"]
 - !private ["PSo16NSObjectProtocol", "defaultCenter"]
@@ -345,6 +361,7 @@ depends-member:
 - !private ["PSo16NSObjectProtocol", "statusCode"]
 - !private ["PSo16NSObjectProtocol", "valueForHTTPHeaderField"]
 - !private ["PSo14NSSecureCoding", "GET"]
+- !private ["PSo14NSSecureCoding", "POST"]
 - ["PSo14NSSecureCoding", "allowInvalidCertificates"]
 - ["PSo14NSSecureCoding", "init"]
 - !private ["PSo14NSSecureCoding", "reachabilityManager"]
@@ -357,6 +374,7 @@ depends-member:
 - ["CSo5NSURL", "init"]
 - !private ["CSo13NSURLResponse", "statusCode"]
 - !private ["PSo24NSURLSessionDataDelegate", "GET"]
+- !private ["PSo24NSURLSessionDataDelegate", "POST"]
 - ["PSo24NSURLSessionDataDelegate", "init"]
 - !private ["PSo24NSURLSessionDataDelegate", "reachabilityManager"]
 - ["PSo24NSURLSessionDataDelegate", "requestSerializer"]
@@ -364,12 +382,14 @@ depends-member:
 - ["PSo24NSURLSessionDataDelegate", "securityPolicy"]
 - !private ["CSo20NSURLSessionDataTask", "response"]
 - !private ["PSo20NSURLSessionDelegate", "GET"]
+- !private ["PSo20NSURLSessionDelegate", "POST"]
 - ["PSo20NSURLSessionDelegate", "init"]
 - !private ["PSo20NSURLSessionDelegate", "reachabilityManager"]
 - ["PSo20NSURLSessionDelegate", "requestSerializer"]
 - ["PSo20NSURLSessionDelegate", "responseSerializer"]
 - ["PSo20NSURLSessionDelegate", "securityPolicy"]
 - !private ["PSo28NSURLSessionDownloadDelegate", "GET"]
+- !private ["PSo28NSURLSessionDownloadDelegate", "POST"]
 - ["PSo28NSURLSessionDownloadDelegate", "init"]
 - !private ["PSo28NSURLSessionDownloadDelegate", "reachabilityManager"]
 - ["PSo28NSURLSessionDownloadDelegate", "requestSerializer"]
@@ -377,12 +397,14 @@ depends-member:
 - ["PSo28NSURLSessionDownloadDelegate", "securityPolicy"]
 - !private ["CSo16NSURLSessionTask", "response"]
 - !private ["PSo24NSURLSessionTaskDelegate", "GET"]
+- !private ["PSo24NSURLSessionTaskDelegate", "POST"]
 - ["PSo24NSURLSessionTaskDelegate", "init"]
 - !private ["PSo24NSURLSessionTaskDelegate", "reachabilityManager"]
 - ["PSo24NSURLSessionTaskDelegate", "requestSerializer"]
 - ["PSo24NSURLSessionTaskDelegate", "responseSerializer"]
 - ["PSo24NSURLSessionTaskDelegate", "securityPolicy"]
 - ["C30SmartTourismTaiwanDataProvider14NetworkManager", "AFHTTPSessionManager"]
+- ["C30SmartTourismTaiwanDataProvider14NetworkManager", "AFJSONRequestSerializer"]
 - ["C30SmartTourismTaiwanDataProvider14NetworkManager", "AFJSONResponseSerializer"]
 - !private ["C30SmartTourismTaiwanDataProvider14NetworkManager", "AFNetworkReachabilityStatus"]
 - ["C30SmartTourismTaiwanDataProvider14NetworkManager", "AnyObject"]
@@ -410,6 +432,7 @@ depends-member:
 - ["C30SmartTourismTaiwanDataProvider14NetworkManager", "supportedLanguage"]
 - ["PSs21NilLiteralConvertible", "Some"]
 - !private ["PSo8Optional", "GET"]
+- !private ["PSo8Optional", "POST"]
 - ["PSo8Optional", "allowInvalidCertificates"]
 - ["PSo8Optional", "bundleIdentifier"]
 - !private ["PSo8Optional", "defaultCenter"]
@@ -505,6 +528,7 @@ depends-nominal:
 - "CSo23AFHTTPRequestSerializer"
 - "CSo24AFHTTPResponseSerializer"
 - "CSo20AFHTTPSessionManager"
+- "CSo23AFJSONRequestSerializer"
 - "CSo24AFJSONResponseSerializer"
 - !private "CSo28AFNetworkReachabilityManager"
 - !private "OSC27AFNetworkReachabilityStatus"
@@ -649,4 +673,4 @@ depends-external:
 - "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/AFNetworking.framework/Headers/AFNetworking.h"
 - "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/AFNetworking.framework/Headers/AFNetworking-umbrella.h"
 - "/Users/kelly/Projects/iOS/SmartTourismTaiwanDataProvider/Build/Products/Debug-iphoneos/AFNetworking.framework/Modules/module.modulemap"
-interface-hash: "3d332e82dd2ec820572af7bc0ecf1fe2"
+interface-hash: "3f8912cd3f893cab2d7e8cd5bb9da1ea"
