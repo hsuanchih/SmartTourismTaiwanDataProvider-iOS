@@ -1,0 +1,6 @@
+framework module Pods_SmartTourismTaiwanDataProviderTests {
+  umbrella header "Pods-SmartTourismTaiwanDataProviderTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

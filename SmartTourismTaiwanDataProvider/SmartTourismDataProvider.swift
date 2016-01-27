@@ -524,7 +524,7 @@ public class SmartTourismDataProvider {
     /**
      * Type resource URI to append to path
      */
-    private enum TypeResourceURI : String {
+    enum TypeResourceURI : String {
         
         case County       = "county/"
         case Theme        = "theme/"
@@ -542,7 +542,7 @@ public class SmartTourismDataProvider {
     /**
      * Category resource URI to append to path
      */
-    private enum CatResourceURI : String {
+    enum CatResourceURI : String {
         
         case FindTopTen       = "findTopTen"
         case FindByCounty     = "findByCounty"

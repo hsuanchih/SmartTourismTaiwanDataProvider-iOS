@@ -8,9 +8,9 @@ provides-member:
 provides-dynamic-lookup:
 depends-top-level:
 - !private "NSObject"
-- "AnyObject"
 - "DataParser"
 - !private "SmartTourismDataObjectFactory"
+- "AnyObject"
 - !private "NSClassFromString"
 - !private "NSStringFromClass"
 depends-member:

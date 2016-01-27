@@ -12,7 +12,8 @@ import AFNetworking
 class NetworkManager {
 
     // Class identifier in reverse-domain naming format
-    private let classID = NSBundle.mainBundle().bundleIdentifier! + ".NetworkManager"
+    //private let classID = NSBundle.mainBundle().bundleIdentifier! + ".NetworkManager"
+    let classID = "SmartTourismTaiwanDataProvider.NetworkManager"
     
     enum RequestMethod {
         case GET
@@ -22,16 +23,16 @@ class NetworkManager {
     }
     
     // API key, app specific
-    private static let appKey = NSBundle.mainBundle().bundleIdentifier!
-    
+    //private static let appKey = NSBundle.mainBundle().bundleIdentifier!
+    static let appKey = "SmartTourismTaiwanDataProvider"
     // API key, common
-    private let apiKey = "5uHMVH0nOLku77kdJE74eyNWLKKNTNCF"
+    let apiKey = "5uHMVH0nOLku77kdJE74eyNWLKKNTNCF"
     
     // Base URL
-    private static let baseUrl = "http://iiidata-prod.apigee.net/"
+    static let baseUrl = "http://iiidata-prod.apigee.net/"
     
     // Smart Tourism resource prefix
-    private let smartTourismResourcePrefix = "SmartTourism/"
+    let smartTourismResourcePrefix = "SmartTourism/"
     
     // HTTP request operation manager initialization
     private var httpClient: AFHTTPSessionManager = {

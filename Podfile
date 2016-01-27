@@ -10,6 +10,6 @@ pod 'JSONModel'
 end
 
 target 'SmartTourismTaiwanDataProviderTests' do
-
+pod 'Nocilla'
 end
 

@@ -6,19 +6,19 @@
 	<dict>
 		<key>Headers/JSONAPI.h</key>
 		<data>
-		hzwFvMLlJlK2J8XhuQBsqkQu4WI=
+		55T5Weu0ClJ8MqI+HUIJS7Ruzzk=
 		</data>
 		<key>Headers/JSONHTTPClient.h</key>
 		<data>
-		1hkw/hfwksbXmZLhnELkRT13gs0=
+		dx4DHwYc/TWPOaltNLRccPBMeX0=
 		</data>
 		<key>Headers/JSONKeyMapper.h</key>
 		<data>
-		nW/1t6XYhqeitTcrfvIYT6ntcVM=
+		rbDcSYBXU8b9DHxWDKy+P2yprgo=
 		</data>
 		<key>Headers/JSONModel+networking.h</key>
 		<data>
-		Z1tq5v5EB4qHeimCOt55rBmijJo=
+		h5FG2dURC+WAYCqlC/MVzHGT33g=
 		</data>
 		<key>Headers/JSONModel-umbrella.h</key>
 		<data>
@@ -26,35 +26,35 @@
 		</data>
 		<key>Headers/JSONModel.h</key>
 		<data>
-		alipFWERZMH2YbrxznQMSyTOCMQ=
+		yEsRYSwubYuWn7YKL1AZhoQMfOI=
 		</data>
 		<key>Headers/JSONModelArray.h</key>
 		<data>
-		v9fjQTPCcFhyA3mizTNfiuTt5UM=
+		seV/JW5irsHGowbXKoHEY72rwOs=
 		</data>
 		<key>Headers/JSONModelClassProperty.h</key>
 		<data>
-		8fKblVrtLRT9JOtx9V/YmMqcFjU=
+		9iGKnVpBauBzmXy/4XOY1evTjSc=
 		</data>
 		<key>Headers/JSONModelError.h</key>
 		<data>
-		7/kEnRcO0e11yIO59teppv7xGao=
+		+mmk/r2pdtN0wrXmslaaJslZbH0=
 		</data>
 		<key>Headers/JSONModelLib.h</key>
 		<data>
-		Zt7BTKrs+9tEm88WXI6YA5sNlqo=
+		LCsfgm9ruOyuAqHa4LEe8n7wwp0=
 		</data>
 		<key>Headers/JSONValueTransformer.h</key>
 		<data>
-		6fSoz2eGxACJSvsxYJdPXwA/MRI=
+		drU+VHfQoI0xWV4/g7X3SQo1xPg=
 		</data>
 		<key>Headers/NSArray+JSONModel.h</key>
 		<data>
-		87wo4ZEJAahNC/ut1Cja0aHpevg=
+		VXaAq4ifCix+MDG1gN8n61I0JY8=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		PLukHRH18Ra+RZgdsPIVGJdW+mM=
+		GlSMNKI+RrPVAAmuPUff7NJ5+rI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,19 +65,19 @@
 	<dict>
 		<key>Headers/JSONAPI.h</key>
 		<data>
-		hzwFvMLlJlK2J8XhuQBsqkQu4WI=
+		55T5Weu0ClJ8MqI+HUIJS7Ruzzk=
 		</data>
 		<key>Headers/JSONHTTPClient.h</key>
 		<data>
-		1hkw/hfwksbXmZLhnELkRT13gs0=
+		dx4DHwYc/TWPOaltNLRccPBMeX0=
 		</data>
 		<key>Headers/JSONKeyMapper.h</key>
 		<data>
-		nW/1t6XYhqeitTcrfvIYT6ntcVM=
+		rbDcSYBXU8b9DHxWDKy+P2yprgo=
 		</data>
 		<key>Headers/JSONModel+networking.h</key>
 		<data>
-		Z1tq5v5EB4qHeimCOt55rBmijJo=
+		h5FG2dURC+WAYCqlC/MVzHGT33g=
 		</data>
 		<key>Headers/JSONModel-umbrella.h</key>
 		<data>
@@ -85,31 +85,31 @@
 		</data>
 		<key>Headers/JSONModel.h</key>
 		<data>
-		alipFWERZMH2YbrxznQMSyTOCMQ=
+		yEsRYSwubYuWn7YKL1AZhoQMfOI=
 		</data>
 		<key>Headers/JSONModelArray.h</key>
 		<data>
-		v9fjQTPCcFhyA3mizTNfiuTt5UM=
+		seV/JW5irsHGowbXKoHEY72rwOs=
 		</data>
 		<key>Headers/JSONModelClassProperty.h</key>
 		<data>
-		8fKblVrtLRT9JOtx9V/YmMqcFjU=
+		9iGKnVpBauBzmXy/4XOY1evTjSc=
 		</data>
 		<key>Headers/JSONModelError.h</key>
 		<data>
-		7/kEnRcO0e11yIO59teppv7xGao=
+		+mmk/r2pdtN0wrXmslaaJslZbH0=
 		</data>
 		<key>Headers/JSONModelLib.h</key>
 		<data>
-		Zt7BTKrs+9tEm88WXI6YA5sNlqo=
+		LCsfgm9ruOyuAqHa4LEe8n7wwp0=
 		</data>
 		<key>Headers/JSONValueTransformer.h</key>
 		<data>
-		6fSoz2eGxACJSvsxYJdPXwA/MRI=
+		drU+VHfQoI0xWV4/g7X3SQo1xPg=
 		</data>
 		<key>Headers/NSArray+JSONModel.h</key>
 		<data>
-		87wo4ZEJAahNC/ut1Cja0aHpevg=
+		VXaAq4ifCix+MDG1gN8n61I0JY8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>

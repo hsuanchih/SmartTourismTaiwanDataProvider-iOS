@@ -9,26 +9,26 @@ provides-member:
 - ["OC30SmartTourismTaiwanDataProvider14NetworkManager13RequestMethod", ""]
 provides-dynamic-lookup:
 depends-top-level:
+- "AFHTTPSessionManager"
+- "AFJSONResponseSerializer"
 - !private "NSNotificationCenter"
-- "NetworkManager"
-- "AnyObject"
-- "AFJSONRequestSerializer"
 - "StringLiteralType"
-- "NSBundle"
+- !private "Void"
 - !private "Dictionary"
 - !private "!="
 - "NSURLSessionDataTask"
+- !private "NSHTTPURLResponse"
+- "AnyObject"
 - "=="
 - "BooleanLiteralType"
-- "NSURL"
+- "NSBundle"
 - "+"
-- "AFHTTPSessionManager"
-- "AFJSONResponseSerializer"
+- "NSURL"
 - !private "AFNetworkReachabilityStatus"
-- "NSError"
 - "String"
-- !private "NSHTTPURLResponse"
-- !private "Void"
+- "NSError"
+- "NetworkManager"
+- "AFJSONRequestSerializer"
 depends-member:
 - ["CSo23AFHTTPRequestSerializer", "init"]
 - ["CSo23AFHTTPRequestSerializer", "setValue"]
