@@ -99,7 +99,7 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
         dataProvider.getCountyList { (error: NSError?, list: [County]?) -> () in
             
             // validate network response & fulfill expectation
-            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as! [County])
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [County])
             expectation.fulfill()
         }
         
@@ -186,7 +186,7 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
         })
     }
     
-    func testgetTopTenActivities() {
+    func testGetTopTenActivities() {
         
         // prepare benchmark data
         let activityList = createActivityList()
@@ -209,7 +209,7 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
         dataProvider.getTopTenActivities { (error: NSError?, list: [Activity]?) -> () in
             
             // validate network response & fulfill expectation
-            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as! [Activity])
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Activity])
             expectation.fulfill()
         }
                 
@@ -245,7 +245,7 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
         dataProvider.getActivitiesByCountyID(countyID) { (error: NSError?, list: [Activity]?) -> () in
             
             // validate network response & fulfill expectation
-            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as! [Activity])
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Activity])
             expectation.fulfill()
         }
         
@@ -281,7 +281,7 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
         dataProvider.getActivitiesByThemeID(themeID) { (error: NSError?, list: [Activity]?) -> () in
             
             // validate network response & fulfill expectation
-            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as! [Activity])
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Activity])
             expectation.fulfill()
         }
         
@@ -328,7 +328,7 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
             count: Int(criteria["count"]!)!) { (error: NSError?, list: [Activity]?) -> () in
                 
                 // validate network response & fulfill expectation
-                unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as! [Activity])
+                unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Activity])
                 expectation.fulfill()
         }
         
@@ -370,7 +370,7 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
             distance: distance) { (error: NSError?, list: [Activity]?) -> () in
                 
                 // validate network response & fulfill expectation
-                unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as! [Activity])
+                unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Activity])
                 expectation.fulfill()
         }
         
@@ -408,7 +408,7 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
         dataProvider.getActivitiesByRank(rank) { (error: NSError?, list: [Activity]?) -> () in
             
             // validate network response & fulfill expectation
-            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as! [Activity])
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Activity])
             expectation.fulfill()
         }
         
@@ -446,7 +446,691 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
         dataProvider.getActivitiesByDate(dateFormatter.stringFromDate(date)) { (error: NSError?, list: [Activity]?) -> () in
             
             // validate network response & fulfill expectation
-            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as! [Activity])
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Activity])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetAttractionByID() {
+        
+        // prepare benchmark data
+        let attractionID = "11"
+        let benchmark = Attraction()
+        benchmark.attractionID = attractionID
+        benchmark.name = "Attraction"
+        benchmark.desc = "Desc"
+        
+        // setup test stub
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.Attraction.stringValue() + attractionID + "/"),
+            requestBody: nil,
+            responseBody: benchmark.toDictionary())
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getAttractionByID(attractionID) { (error: NSError?, activity: Attraction?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: activity, benchmarkResponse: benchmark.toJSONData())
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetAttractionsByThemeID() {
+        
+        // prepare benchmark data
+        let themeID = "11"
+        let attractionList = createAttractionList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(attractionList)
+        
+        // setup test stub
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.Attraction.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindByTheme.stringValue()) +
+                "&themeid=" + themeID,
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getAttractionsByThemeID(themeID) { (error: NSError?, list: [Attraction]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Attraction])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetAttractionsByRank() {
+        
+        // prepare benchmark data
+        let attractionList = createAttractionList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(attractionList)
+        
+        // setup test stub
+        let rank = 5
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.Attraction.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindByRank.stringValue()) +
+                "&rank=" + String(rank),
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getAttractionsByRank(rank) { (error: NSError?, list: [Attraction]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Attraction])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetAttractionsByCountyID() {
+        
+        // prepare benchmark data
+        let attractionList = createAttractionList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(attractionList)
+        
+        // setup test stub
+        let countyID = "11"
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.Attraction.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindByCounty.stringValue()) + "&countyid=" + countyID,
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getAttractionsByCountyID(countyID) { (error: NSError?, list: [Attraction]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Attraction])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetTopTenAttractions() {
+        
+        // prepare benchmark data
+        let attractionList = createAttractionList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(attractionList)
+        
+        // setup test stub
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.Attraction.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindTopTen.stringValue()),
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getTopTenAttractions { (error: NSError?, list: [Attraction]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Attraction])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetAttractionsByCriteria() {
+        
+        // prepare benchmark data
+        let attractionList = createAttractionList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(attractionList)
+        
+        // setup test stub
+        let criteria = setupCriteria()
+        var resource = constructUrl(SmartTourismDataProvider.TypeResourceURI.Attraction.stringValue() +
+            SmartTourismDataProvider.CatResourceURI.FindByCriteria.stringValue())
+        
+        for (key, value) in criteria.sort({ $0.0 < $1.0 })  {
+            resource += "&" + key + "=" + value
+        }
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: resource,
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getAttractionsByCriteria(
+            criteria["themeid"]!,
+            countyID: criteria["countyid"]!,
+            latitude: Float(criteria["latitude"]!)!,
+            longitude: Float(criteria["longitude"]!)!,
+            offset: Int(criteria["offset"]!)!,
+            count: Int(criteria["count"]!)!) { (error: NSError?, list: [Attraction]?) -> () in
+                
+                // validate network response & fulfill expectation
+                unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Attraction])
+                expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetAttractionsInGeofence() {
+        
+        // prepare benchmark data
+        let attractionList = createAttractionList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(attractionList)
+        let latitude : Float = 25.058, longitude : Float = 121.548, distance = 200
+        
+        // setup test stub
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.Attraction.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindByNearBy.stringValue()) +
+                "&distance=" + String(distance) +
+                "&latitude=" + String(latitude) +
+                "&longitude=" + String(longitude),
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getAttractionsInGeofence(
+            latitude,
+            longitude: longitude,
+            distance: distance) { (error: NSError?, list: [Attraction]?) -> () in
+                
+                // validate network response & fulfill expectation
+                unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Attraction])
+                expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetTourByID() {
+        
+        // prepare benchmark data
+        let tourID = "11"
+        let benchmark = Tour()
+        benchmark.tourID = tourID
+        benchmark.name = "Tour"
+        benchmark.desc = "Desc"
+        
+        // setup test stub
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.Tour.stringValue() + tourID + "/"),
+            requestBody: nil,
+            responseBody: benchmark.toDictionary())
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getTourByID(tourID) { (error: NSError?, tour: Tour?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: tour, benchmarkResponse: benchmark.toJSONData())
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetTourList() {
+        
+        // prepare benchmark data
+        let tourList = createTourList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(tourList)
+        
+        // setup test stub
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.Tour.stringValue()),
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getTourList { (error: NSError?, list: [Tour]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Tour])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetToursByAttractionID() {
+        
+        // prepare benchmark data
+        let tourList = createTourList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(tourList)
+        
+        // setup test stub
+        let attractionID = "11"
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.Tour.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindByAttraction.stringValue()) + "&attractionid=" + attractionID,
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getToursByAttractionID(attractionID) { (error: NSError?, list: [Tour]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Tour])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetToursByThemeID() {
+        
+        // prepare benchmark data
+        let tourList = createTourList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(tourList)
+        
+        // setup test stub
+        let themeID = "11"
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.Tour.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindByTheme.stringValue()) + "&themeid=" + themeID,
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getToursByThemeID(themeID) { (error: NSError?, list: [Tour]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Tour])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetFoodAndDrinkByID() {
+        
+        // prepare benchmark data
+        let foodAndDrinkID = "11"
+        let benchmark = FoodAndDrink()
+        benchmark.foodAndDrinkID = foodAndDrinkID
+        benchmark.name = "Tour"
+        benchmark.desc = "Desc"
+        
+        // setup test stub
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.FoodAndDrink.stringValue() + foodAndDrinkID + "/"),
+            requestBody: nil,
+            responseBody: benchmark.toDictionary())
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getFoodAndDrinkByID(foodAndDrinkID) { (error: NSError?, foodAndDrink: FoodAndDrink?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: foodAndDrink, benchmarkResponse: benchmark.toJSONData())
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetFoodAndDrinkByThemeID() {
+        
+        // prepare benchmark data
+        let foodAndDrinkList = createFoodAndDrinkList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(foodAndDrinkList)
+        
+        // setup test stub
+        let themeID = "11"
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.FoodAndDrink.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindByTheme.stringValue()) + "&themeid=" + themeID,
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getFoodAndDrinkByThemeID(themeID) { (error: NSError?, list: [FoodAndDrink]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [FoodAndDrink])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetFoodAndDrinkByCountyID() {
+        
+        // prepare benchmark data
+        let foodAndDrinkList = createFoodAndDrinkList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(foodAndDrinkList)
+        
+        // setup test stub
+        let countyID = "11"
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.FoodAndDrink.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindByCounty.stringValue()) + "&countyid=" + countyID,
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getFoodAndDrinkByCountyID(countyID) { (error: NSError?, list: [FoodAndDrink]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [FoodAndDrink])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetTopTenFoodAndDrink() {
+        
+        // prepare benchmark data
+        let foodAndDrinkList = createFoodAndDrinkList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(foodAndDrinkList)
+        
+        // setup test stub
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.FoodAndDrink.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindTopTen.stringValue()),
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getTopTenFoodAndDrink { (error: NSError?, list: [FoodAndDrink]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [FoodAndDrink])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetFoodAndDrinkByCriteria() {
+        
+        // prepare benchmark data
+        let foodAndDrinkList = createFoodAndDrinkList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(foodAndDrinkList)
+        
+        // setup test stub
+        let criteria = setupCriteria()
+        var resource = constructUrl(SmartTourismDataProvider.TypeResourceURI.FoodAndDrink.stringValue() +
+            SmartTourismDataProvider.CatResourceURI.FindByCriteria.stringValue())
+        
+        for (key, value) in criteria.sort({ $0.0 < $1.0 })  {
+            resource += "&" + key + "=" + value
+        }
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: resource,
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getFoodAndDrinkByCriteria(
+            criteria["themeid"]!,
+            countyID: criteria["countyid"]!,
+            latitude: Float(criteria["latitude"]!)!,
+            longitude: Float(criteria["longitude"]!)!,
+            offset: Int(criteria["offset"]!)!,
+            count: Int(criteria["count"]!)!) { (error: NSError?, list: [FoodAndDrink]?) -> () in
+                
+                // validate network response & fulfill expectation
+                unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [FoodAndDrink])
+                expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetFoodAndDrinkInGeofence() {
+        
+        // prepare benchmark data
+        let foodAndDrinkList = createFoodAndDrinkList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(foodAndDrinkList)
+        let latitude : Float = 25.058, longitude : Float = 121.548, distance = 200
+        
+        // setup test stub
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.FoodAndDrink.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindByNearBy.stringValue()) +
+                "&distance=" + String(distance) +
+                "&latitude=" + String(latitude) +
+                "&longitude=" + String(longitude),
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getFoodAndDrinkInGeofence(
+            latitude,
+            longitude: longitude,
+            distance: distance) { (error: NSError?, list: [FoodAndDrink]?) -> () in
+                
+                // validate network response & fulfill expectation
+                unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [FoodAndDrink])
+                expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+    }
+    
+    func testGetFoodAndDrinkByRank() {
+        
+        // prepare benchmark data
+        let foodAndDrinkList = createFoodAndDrinkList()
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(foodAndDrinkList)
+        
+        // setup test stub
+        let rank = 5
+        setupTestStubWithRequestMethod(
+            "GET",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.FoodAndDrink.stringValue() +
+                SmartTourismDataProvider.CatResourceURI.FindByRank.stringValue()) +
+                "&rank=" + String(rank),
+            requestBody: nil,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.getFoodAndDrinkByRank(rank) { (error: NSError?, list: [FoodAndDrink]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [FoodAndDrink])
             expectation.fulfill()
         }
         
@@ -471,6 +1155,45 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
             activityList.append(activity)
         }
         return activityList
+    }
+    
+    func createAttractionList() -> [Attraction] {
+        
+        var attractionList = [Attraction]()
+        for i in 0..<10 {
+            let attraction = Attraction()
+            attraction.attractionID = String(i)
+            attraction.name = "attraction" + attraction.attractionID
+            attraction.desc = "desc" + attraction.attractionID
+            attractionList.append(attraction)
+        }
+        return attractionList
+    }
+    
+    func createTourList() -> [Tour] {
+        
+        var tourList = [Tour]()
+        for i in 0..<10 {
+            let tour = Tour()
+            tour.tourID = String(i)
+            tour.name = "tour" + tour.tourID
+            tour.desc = "desc" + tour.tourID
+            tourList.append(tour)
+        }
+        return tourList
+    }
+    
+    func createFoodAndDrinkList() -> [FoodAndDrink] {
+        
+        var foodAndDrinkList = [FoodAndDrink]()
+        for i in 0..<10 {
+            let foodAndDrink = FoodAndDrink()
+            foodAndDrink.foodAndDrinkID = String(i)
+            foodAndDrink.name = "foodAndDrink" + foodAndDrink.foodAndDrinkID
+            foodAndDrink.desc = "desc" + foodAndDrink.foodAndDrinkID
+            foodAndDrinkList.append(foodAndDrink)
+        }
+        return foodAndDrinkList
     }
     
     func setupCriteria() -> [String: String] {
