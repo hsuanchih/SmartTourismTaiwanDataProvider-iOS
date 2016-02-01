@@ -18,13 +18,24 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
         return SmartTourismDataProvider.instance
     }()
     
-    lazy var requestHeader = {
+    /*
+    lazy var requestHeaderGet = {
         return [
             "Accept-Language": "zh-Hant-US;q=1, en-US;q=0.9, ja-US;q=0.8",
             "User-Agent": "(null)/(null) (iPhone; iOS 9.2; Scale/2.00)",
-            "apiKey": NetworkManager.appKey
+            "apiKey": NetworkManager.appKey,
         ]
     }()
+    
+    lazy var requestHeaderPost = {
+        return [
+            "Accept-Language": "zh-Hant-US;q=1, en-US;q=0.9, ja-US;q=0.8",
+            "Content-Length" : "",
+            "User-Agent": "(null)/(null) (iPhone; iOS 9.2; Scale/2.00)",
+            "apiKey": NetworkManager.appKey,
+        ]
+    }
+*/
     
     lazy var responseHeader = {
         return ["Content-Type" : "application/json"]
@@ -1142,6 +1153,62 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
         })
     }
     
+    func testPostPoiList() {
+        
+        // prepare request data
+        var poiIDList = [[String:String]]()
+        var poiIDListString = "["
+        for i in 0..<10 {
+            let poi = ["id": String(i)]
+            poiIDList.append(poi)
+            poiIDListString += "{\"id\":\"" + String(i) + "\"}"
+            if i < 9 {
+                poiIDListString += ","
+            }
+        }
+        poiIDListString += "]"
+        print(poiIDListString)
+        
+        // prepare benchmark data
+        var poiList = [Poi]()
+        for i in 0..<10 {
+            let poi = Poi()
+            poi.poiID = String(i)
+            poi.type = "type" + poi.poiID
+            poi.detail = "detail" + poi.poiID
+            poiList.append(poi)
+        }
+        let benchmarkData = JSONModel.arrayOfDictionariesFromModels(poiList)
+        
+        // setup test stub
+        setupTestStubWithRequestMethod(
+            "POST",
+            resource: constructUrl(SmartTourismDataProvider.TypeResourceURI.PoiService.stringValue()),
+            requestBody: poiIDListString,
+            responseBody: benchmarkData)
+        
+        // form expectation
+        let testCase = __FUNCTION__
+        let expectation = expectationWithDescription(testCase)
+        
+        // fire network request
+        unowned let unownedSelf = self
+        dataProvider.postPoiService(poiIDList) { (error: NSError?, list: [Poi]?) -> () in
+            
+            // validate network response & fulfill expectation
+            unownedSelf.validateResponse(testCase, error: error, result: list, benchmarkResponse: benchmarkData as Array as! [Poi])
+            expectation.fulfill()
+        }
+        
+        // wait for expectation timeout
+        waitForExpectationsWithTimeout(10.0, handler: { (error: NSError?) -> Void in
+            if error != nil {
+                XCTFail(testCase + ": Timed-Out")
+            }
+        })
+        
+    }
+    
     
     // MARK: Benchmark data factory
     func createActivityList() -> [Activity] {
@@ -1213,7 +1280,7 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
     func setupTestStubWithRequestMethod(
         requestMethod: String,
         resource: String,
-        requestBody: AnyObject?,
+        requestBody: String?,
         responseBody: AnyObject)
     {
         do {
@@ -1221,24 +1288,19 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
             
             if requestBody != nil {
                 
-                do {
-                    let request = try NSJSONSerialization.dataWithJSONObject(requestBody!, options: NSJSONWritingOptions.PrettyPrinted)
-                    
-                    stubRequest(requestMethod, resource)
-                        .withHeaders(requestHeader)
-                        .withBody(request)
-                        .andReturn(200)
-                        .withHeaders(responseHeader)
-                        .withBody(response)
-                    
-                } catch {
-                    XCTFail(__FUNCTION__ + ": Invalid Data")
-                }
+                var header = requestHeader(requestMethod)
+                header.updateValue(String(requestBody!.characters.count), forKey: "Content-Length")
+                stubRequest(requestMethod, resource)
+                    .withHeaders(header)
+                    .withBody(requestBody)
+                    .andReturn(200)
+                    .withHeaders(responseHeader)
+                    .withBody(response)
                 
             } else {
                 
                 stubRequest(requestMethod, resource)
-                    .withHeaders(requestHeader)
+                    .withHeaders(requestHeader(requestMethod))
                     .andReturn(200)
                     .withHeaders(responseHeader)
                     .withBody(response)
@@ -1246,6 +1308,23 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
         } catch {
             XCTFail(__FUNCTION__ + ": Invalid Data")
         }
+    }
+    
+    func requestHeader(requestType: String) -> [String: String] {
+        
+        var requestHeader = [
+            "Accept-Language": "zh-Hant-US;q=1, en-US;q=0.9, ja-US;q=0.8",
+            "User-Agent": "(null)/(null) (iPhone; iOS 9.2; Scale/2.00)",
+            "apiKey": NetworkManager.appKey]
+        
+        switch requestType {
+        case "POST":
+            requestHeader["Content-Length"] = "0"
+            requestHeader["Content-Type"] = "application/json"
+        default:
+            break
+        }
+        return requestHeader
     }
     
     
