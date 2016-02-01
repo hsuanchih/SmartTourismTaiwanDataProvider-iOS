@@ -1167,7 +1167,6 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
             }
         }
         poiIDListString += "]"
-        print(poiIDListString)
         
         // prepare benchmark data
         var poiList = [Poi]()
