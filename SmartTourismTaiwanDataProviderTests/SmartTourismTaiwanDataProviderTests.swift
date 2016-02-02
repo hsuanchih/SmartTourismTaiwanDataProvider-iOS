@@ -18,25 +18,6 @@ class SmartTourismTaiwanDataProviderTests: XCTestCase {
         return SmartTourismDataProvider.instance
     }()
     
-    /*
-    lazy var requestHeaderGet = {
-        return [
-            "Accept-Language": "zh-Hant-US;q=1, en-US;q=0.9, ja-US;q=0.8",
-            "User-Agent": "(null)/(null) (iPhone; iOS 9.2; Scale/2.00)",
-            "apiKey": NetworkManager.appKey,
-        ]
-    }()
-    
-    lazy var requestHeaderPost = {
-        return [
-            "Accept-Language": "zh-Hant-US;q=1, en-US;q=0.9, ja-US;q=0.8",
-            "Content-Length" : "",
-            "User-Agent": "(null)/(null) (iPhone; iOS 9.2; Scale/2.00)",
-            "apiKey": NetworkManager.appKey,
-        ]
-    }
-*/
-    
     lazy var responseHeader = {
         return ["Content-Type" : "application/json"]
     }()
