@@ -57,7 +57,7 @@ dataProvider.supportedLanguage = SmartTourismDataProvider.SupportedLanguage.en_u
 
 
 ## TODO
-#####Intelligent & ACL APIs Pending
+##### Intelligent & ACL APIs Pending
 
 ## License
-#####Licensed under the MIT License.
+##### Licensed under the MIT License.
